@@ -7,13 +7,10 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import LoginManager, login_user, current_user, logout_user
 from functools import wraps
 from bs4 import BeautifulSoup
-from env import load_env
 import os
 
 
 # ----------------------------------------------
-load_env()
-
 app = Flask(__name__)
 app.config["CKEDITOR_CONFIG"] = {"versionCheck": False}
 app.config["CKEDITOR_PKG_TYPE"] = 'standart'
