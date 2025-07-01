@@ -52,7 +52,7 @@ class Database():
 
     def __init__(self, app):
         self.app = app
-        self.app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["DB_URI"]
+        self.app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///posts.db")
         db.init_app(self.app)
         with self.app.app_context():
             db.create_all()
